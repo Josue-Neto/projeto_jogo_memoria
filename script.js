@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
-    if (disabledCards.length === 20) {
+    if (disabledCards.length === 24) {
       clearInterval(loop);
       alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
     }
