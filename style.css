@@ -62,6 +62,13 @@
       width: 100%;
     }
 
+    .voltar{
+      background-color: #eeeeee00;
+      border: 2px solid #96959500;
+      color: #000000;
+      cursor: pointer;
+    }
+
     .login__button:disabled {
       background-color: #eee;
       border: 2px solid #969595;
@@ -79,7 +86,6 @@
       align-items: center;
       justify-content: center;
       padding: 20px 20px 50px;
-      align-items: center;
     }
 
     header {
@@ -90,7 +96,7 @@
       background-color: rgba(255, 255, 255, 0.8);
       font-size: 1.2em;
       width: 100%;
-      max-width: 800px;
+      max-width: 1200px;
       padding: 30px;
       margin: 0 0 30px;
       border-radius: 5px;

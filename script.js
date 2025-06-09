@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const input = document.querySelector('.login__input');
-  const button = document.querySelector('.login__button');
+  const login__button = document.querySelector('.login__button');
   const form = document.querySelector('.login-form');
   const gameArea = document.querySelector('main');
   const spanPlayer = document.querySelector('.player');
@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const validateInput = ({ target }) => {
     if (target.value.trim().length > 0) {
-      button.removeAttribute('disabled');
+      login__button.removeAttribute('disabled');
     } else {
-      button.setAttribute('disabled', '');
+      login__button.setAttribute('disabled', '');
     }
   };
 
@@ -126,4 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
   input.addEventListener('input', validateInput);
   form.addEventListener('submit', handleSubmit);
 });
- 
+
+function reiniciarPagina() {
+  location.reload();
+}
+
