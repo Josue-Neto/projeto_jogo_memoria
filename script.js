@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     'Taylor_Swift', 
     'Katy_Perry', 
     'Nicki_Minaj', 
-    'Sza'
+    'Sza',
+    'Demi_Lovato',
+    'Beyonce',
   ];
 
   const validateInput = ({ target }) => {
