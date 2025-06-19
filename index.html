@@ -13,22 +13,21 @@
         <div class="login__header">
             <img src="images/brain.png" alt="brain icon">
             <h1>Jogo da Memória</h1>
+            <p class="login__subtitulo">
+    Pronto para encontrar todos os pares das celebridades? Ao pressionar o botão play, o jogo será iniciado e o tempo começará a correr. Seja rápido e encontre todos os pares!
+  </p>
         </div>
         <input type="text" placeholder="Seu nome" class="login__input">
         <button type="submit" class="login__button" disabled>Play</button>
     </form>
 
-    <main>   
-        
-        <header>   
-
-        <button class="voltar" id="voltar" onclick="reiniciarPagina()">Voltar</button>Jogador: 
+    <main>
+        <header>
+            <button class="voltar" id="voltar" onclick="reiniciarPagina()">Voltar</button>Jogador:
             <span class="player"></span>
             <span>Tempo: <span class="timer">00</span></span>
-            <button id="reiniciar" onclick="reiniciarPagina()">Reiniciar Página</button>
-            
+            <button class="reiniciarJogo" id="reiniciarJogo" onclick="reiniciarJogo()">Reiniciar</button>
         </header>
-
         <div class="grid"></div>
     </main>
   

@@ -1,3 +1,13 @@
+let loop;
+let firstCard = '';
+let secondCard = '';
+let grid;
+let timer;
+let spanPlayer;
+
+window.startTimer = () => {};
+window.loadGame = () => {};
+
 document.addEventListener('DOMContentLoaded', () => {
   const input = document.querySelector('.login__input');
   const login__button = document.querySelector('.login__button');
@@ -7,6 +17,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const timer = document.querySelector('.timer');
   const grid = document.querySelector('.grid');
   let loop;
+
+  window.startTimer = function () {
+  if (loop) clearInterval(loop);
+  loop = setInterval(() => {
+    const currentTime = +timer.innerHTML;
+    timer.innerHTML = currentTime + 1;
+  }, 1000);
+};
+
+window.loadGame = function () {
+  const characters = [
+    'Cry_Baby', 'Whitney', 'Lady_Gaga', 'Rihanna',
+    'Dua_Lipa', 'Ariana_Grande', 'Taylor_Swift',
+    'Katy_Perry', 'Nicki_Minaj', 'Sza',
+    'Demi_Lovato', 'Beyonce',
+  ];
+
+  const duplicateCharacters = [...characters, ...characters];
+  const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
+
+  shuffledArray.forEach((character) => {
+    const card = createCard(character);
+    grid.appendChild(card);
+  });
+};
 
   const characters = [
     'Cry_Baby', 
@@ -60,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
     if (disabledCards.length === 24) {
       clearInterval(loop);
-      alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`);
+      alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML} segundos.`);
     }
   };
 
@@ -131,3 +166,17 @@ function reiniciarPagina() {
   location.reload();
 }
 
+window.reiniciarJogo = function () {
+  if (typeof loop !== 'undefined') clearInterval(loop);
+  if (document.querySelector('.timer')) {
+    document.querySelector('.timer').innerHTML = '0';
+  }
+  const grid = document.querySelector('.grid');
+  if (grid) {
+    grid.innerHTML = '';
+  }
+  firstCard = '';
+  secondCard = '';
+  if (typeof startTimer === 'function') startTimer();
+  if (typeof loadGame === 'function') loadGame();
+};
