@@ -19,6 +19,14 @@
       flex-direction: column;
       height: 100vh;
       justify-content: center;
+      display: none;
+      width: 100%;
+      background-image: url('images/Primeiro_fundo.jpg');
+      background-size: cover;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 20px 50px;
     }
 
     .login__header {
