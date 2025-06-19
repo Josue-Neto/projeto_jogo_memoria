@@ -19,7 +19,6 @@
       flex-direction: column;
       height: 100vh;
       justify-content: center;
-      display: none;
       width: 100%;
       background-image: url('images/Primeiro_fundo.jpg');
       background-size: cover;
@@ -197,3 +196,58 @@
     .reiniciarJogo:hover {
   transform: scale(1.05);
     }
+
+    @media (max-width: 768px) {
+  .login__header img {
+    width: 150px;
+  }
+
+  .login__header h1,
+  .login__subtitulo {
+    font-size: 0.9em;
+    padding: 0 10px;
+  }
+
+  .login__input,
+  .login__button {
+    padding: 20px;
+    font-size: 0.9em;
+  }
+
+  .voltar,
+  .reiniciarJogo {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header {
+    flex-direction: column;
+    font-size: 0.9em;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .login__header h1 {
+    font-size: 0.8em;
+  }
+
+  .login__input,
+  .login__button {
+    padding: 15px;
+    font-size: 0.8em;
+  }
+
+  .voltar,
+  .reiniciarJogo {
+    padding: 8px 16px;
+  }
+}
